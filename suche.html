@@ -32,12 +32,14 @@
 							<legend>Suchformular</legend>
 							<label for="suchfeld" class="left">Suchwort:</label>
 							<input type="text" id="suchfeld" name="suchfeld" size="45"><br>
-							<label for="radio1" class="radio-inline">
-								<input type="radio" id="artikelsuche" name="radio" value="artikelsuche" class="right"> Artikelsuche
-							</label>
-							<label for="radio2" class="radio-inline">
-								<input type="radio" id="volltextsuche" name="radio" value="volltextsuche" class="right"> Volltextsuche
-							</label>
+							<div class="radio-inline">
+								<label for="radio1">Artikelsuche:</label>
+									<input type="radio" id="artikelsuche" name="radio" value="artikelsuche" class="right">
+								</label>
+								<label for="radio2">Volltextsuche:</label>
+									<input type="radio" id="volltextsuche" name="radio" value="volltextsuche" class="right">
+								</label>
+							</div>
 							<br><br>
 							<button type="submit">Suchen</button>
 						</fieldset>
