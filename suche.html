@@ -8,6 +8,17 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
     	<link rel="stylesheet" href="main.css">
+	<script type="text/javascript">
+		function searchWikipedia(){
+			var text = Document.getElementById('suchfeld');
+			if(Document.getElementById('artikelsuche').checked == true){
+				window.open("http://www.w3schools.com");
+			}
+			else if(Document.getElementById('volltextsuche').checked == true){
+				window.open("http://www.w3schools.com");
+			}
+		}
+	</script>
 	</head>
 	<body>
 		<div class="nav">
@@ -27,7 +38,7 @@
 					<h1>Wikipedia Suche</h1>
 				</div>
 				<div class="panel-body">
-					<form action="suche" class="form-horizontal">
+					<form onsubmit="return sucheWikipedia();  class="form-horizontal">
 						<fieldset>
 							<legend>Suchformular</legend>
 							<label for="suchfeld" class="left">Suchwort:</label>
