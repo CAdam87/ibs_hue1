@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Curtis Adam Homepage</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Curtis Adam Homepage</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 
-    	<link rel="stylesheet" href="main.css">
-	<script type="text/javascript">
-		function searchWikipedia(){
-			var text = Document.getElementById('suchfeld');
-			if(Document.getElementById('artikelsuche').checked == true){
-				window.open("http://www.w3schools.com");
-			}
-			else if(Document.getElementById('volltextsuche').checked == true){
-				window.open("http://www.w3schools.com");
-			}
-		}
-	</script>
+    		<link rel="stylesheet" href="main.css">
 	</head>
 	<body>
 		<div class="nav">
@@ -38,21 +27,14 @@
 					<h1>Wikipedia Suche</h1>
 				</div>
 				<div class="panel-body">
-					<form onsubmit="return sucheWikipedia();  class="form-horizontal">
+					<form action="http://de.wikipedia.org/wiki/Spezial:Suche" class="form-horizontal">
 						<fieldset>
 							<legend>Suchformular</legend>
 							<label for="suchfeld" class="left">Suchwort:</label>
-							<input type="text" id="suchfeld" name="suchfeld" size="45"><br>
-							<div class="radio-inline">
-								<label for="artikelsuche">Artikelsuche:</label>
-									<input type="radio" id="artikelsuche" name="radio" value="artikelsuche" class="right">
-								</label>
-								<label for="volltextsuche">Volltextsuche:</label>
-									<input type="radio" id="volltextsuche" name="radio" value="volltextsuche" class="right">
-								</label>
-							</div>
+							<input type="text" id="suchfeld" name="suchfeld" size="45">
 							<br><br>
-							<button type="submit">Suchen</button>
+				    			<input type="submit" name="go" value="Artikel"/>
+    							<input type="submit" name="fulltext" value="Volltext" />
 						</fieldset>
 					</form>
 					<a href="http://wave.webaim.org/report#/caibshue1.cloudcontrolled.com/index.html"
