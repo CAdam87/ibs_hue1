@@ -44,10 +44,15 @@ p{
 	border-color: #1c3e5b;
 }
 
+.panel-footer li{
+	display: inline;
+	font-size: 14px;
+}
 .panel-footer a{
 	margin-right: 30px;
 	color: #1c3e5b;
 	font-weight: bold;
+	text-decoration: none;
 }
 
 .nav-justified a{
