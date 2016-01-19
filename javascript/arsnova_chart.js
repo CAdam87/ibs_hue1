@@ -18,21 +18,54 @@ function getArsnovaStats(){
 		xmlHttp.onreadystatechange = function () {
 			if (xmlHttp.readyState == 4) {
 				var result = JSON.parse(xmlHttp.responseText);
-				document.getElementById("answers-count").innerHTML = result.answers;
-				document.getElementById("lectureQuestions-count").innerHTML = result.lectureQuestions;
-				document.getElementById("preparationQuestions-count").innerHTML = result.preparationQuestions;
-				document.getElementById("openSessions-count").innerHTML = result.openSessions;
-				document.getElementById("closedSessions-count").innerHTML = result.closedSessions;
-				document.getElementById("creators-count").innerHTML = result.creators;
-				document.getElementById("activeUsers-count").innerHTML = result.activeUsers;
-				document.getElementById("activeStudents-count").innerHTML = result.activeStudents;
-				document.getElementById("loggedinUsers-count").innerHTML = result.loggedinUsers;
-				document.getElementById("interposedQuestions-count").innerHTML = result.interposedQuestions;
-				document.getElementById("conceptQuestions-count").innerHTML = result.conceptQuestions;
-				document.getElementById("questions-count").innerHTML = result.questions;
-				document.getElementById("sessions-count").innerHTML = result.sessions;
+				drawGraph(result);
 			}
 		};
 		xmlHttp.send(null);
 	}
+}
+
+function drawGraph(result) {
+
+//Better to construct options first and then pass it as a parameter
+
+	var options = {
+		title: {
+			text: "Arsnova.eu Statistik"
+		},
+                animationEnabled: true,
+        axisY: {
+				labelFontSize: 14,
+				labelFontColor: "dimGrey",
+				labelAngle: -45
+		},
+        axisX: {
+				labelFontSize: 14,
+				labelFontColor: "dimGrey",
+				labelAngle: -45
+		},
+		data: [
+		{
+			type: "column", //change it to line, area, bar, pie, etc
+			dataPoints: [
+				{ label: "answers", y: result.answers },
+				{ label: "lectureQuestions", y: result.lectureQuestions },
+				{ label: "preparationQuestions", y: result.preparationQuestions },
+				{ label: "openSessions", y: result.openSessions },
+				{ label: "closedSessions", y: result.closedSessions },
+				{ label: "creators", y: result.creators },
+				{ label: "activeUsers", y: result.activeUsers },
+				{ label: "activeStudents", y: result.activeStudents },
+				{ label: "loggedinUsers", y: result.loggedinUsers },
+				{ label: "interposedQuestions", y: result.interposedQuestions },
+				{ label: "conceptQuestions", y: result.conceptQuestions },
+				{ label: "questions", y: result.questions },
+				{ label: "sessions", y: result.sessions }
+			]
+		}
+		]
+	};
+
+	$("#chartContainer").CanvasJSChart(options);
+
 }

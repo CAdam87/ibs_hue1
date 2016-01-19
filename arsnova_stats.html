@@ -7,8 +7,8 @@
 		<title>Curtis Adam Homepage THM - Arsnova Stats</title>
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<script type = "text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script type = "text/javascript" src="http://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
 		<script type = "text/javascript" src="javascript/arsnova_chart.js"></script>
-		<link rel="stylesheet" type="text/css" href="arsnova_chart.css">
 	    	<link rel="stylesheet" type="text/css" href="main.css">
 	</head>
 	<body>
@@ -30,70 +30,15 @@
 					<h1>Arsnova Stats</h1>
 				</div>
 				<div class="panel-body">
+				<!-- JavaScript-Required Content -->
+					<div id="chartContainer" style="height: 700px; width: 100%;"></div>
+				<!-- END JavaScript-Required Content -->
 
-					<h2>Arsnova.eu Statistiken:</h2>
-					<table  class= "table table-striped table-bordered table-hover">
-						<thead>
-							<tr>
-								<th id="description" scope="colum">Description:</th>
-								<th  id="count" scope="colum">Count:</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td headers ="description">answers</td>
-								<td id ="answers-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">lectureQuestions</td>
-								<td id ="lectureQuestions-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">preparationQuestions</td>
-								<td id ="preparationQuestions-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">openSessions</td>
-								<td id ="openSessions-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">closedSessions</td>
-								<td id ="closedSessions-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">creators</td>
-								<td id ="creators-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">activeUsers</td>
-								<td id ="activeUsers-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">activeStudents</td>
-								<td id ="activeStudents-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">loggedinUsers</td>
-								<td id ="loggedinUsers-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">interposedQuestions</td>
-								<td id ="interposedQuestions-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">conceptQuestions</td>
-								<td id ="conceptQuestions-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">questions</td>
-								<td id ="questions-count" headers ="count"></td>
-							</tr>
-							<tr>
-								<td headers ="description">sessions</td>
-								<td id ="sessions-count" headers ="count"></td>
-							</tr>
-						</tbody>
-					</table>
+				<!-- Fallback Content -->
+				<noscript>
+					Javascript ist deaktiviert.
+				</noscript>
+				<!-- END Fallback Content -->
 					</div>
 					<div class="panel-footer">
 						<ul>						
