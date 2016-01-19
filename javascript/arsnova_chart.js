@@ -11,7 +11,7 @@ function getArsnovaStats(){
 	try {
 		xmlHttp = new XMLHttpRequest();
 	} catch(e) {
-		// Fehlerbehandlung, wenn die Schnittstelle vom Browser nicht unterstützt wird.
+		alert("Statistik Server nicht erreichbar");
 	}
 	if (xmlHttp) {
 		xmlHttp.open('GET', 'https://arsnova.eu/api/statistics/', true);
@@ -27,26 +27,34 @@ function getArsnovaStats(){
 
 function drawGraph(result) {
 
-//Better to construct options first and then pass it as a parameter
-
+	CanvasJS.addColorSet("blueShades",
+	[
+		"#528B8B",
+		"#96CDCD",
+		"#66CCCC",
+		"#00CDCD",
+		"#4A777A",
+		"#0EBFE9",
+		"#162252"
+	]);
 	var options = {
-		title: {
-			text: "Arsnova.eu Statistik"
-		},
-                animationEnabled: true,
-        axisY: {
+		colorSet: "blueShades",
+		animationEnabled: true,
+		axisY: {
+ 				labelFontFamily: "Arial, Sans",
 				labelFontSize: 14,
-				labelFontColor: "dimGrey",
-				labelAngle: -45
+				labelFontColor: "Black",
+				labelAngle: 0
 		},
-        axisX: {
+		axisX: {
+				labelFontFamily: "Arial, Sans",
 				labelFontSize: 14,
-				labelFontColor: "dimGrey",
+				labelFontColor: "Black",
 				labelAngle: -45
 		},
 		data: [
 		{
-			type: "column", //change it to line, area, bar, pie, etc
+			type: "column",
 			dataPoints: [
 				{ label: "answers", y: result.answers },
 				{ label: "lectureQuestions", y: result.lectureQuestions },
@@ -65,7 +73,5 @@ function drawGraph(result) {
 		}
 		]
 	};
-
 	$("#chartContainer").CanvasJSChart(options);
-
 }
