@@ -27,51 +27,45 @@ function getArsnovaStats(){
 
 function drawGraph(result) {
 
-	CanvasJS.addColorSet("blueShades",
-	[
-		"#528B8B",
-		"#96CDCD",
-		"#66CCCC",
-		"#00CDCD",
-		"#4A777A",
-		"#0EBFE9",
-		"#162252"
-	]);
 	var options = {
-		colorSet: "blueShades",
 		animationEnabled: true,
-		axisY: {
- 				labelFontFamily: "Arial, Sans",
-				labelFontSize: 14,
-				labelFontColor: "Black",
-				labelAngle: 0
-		},
-		axisX: {
-				labelFontFamily: "Arial, Sans",
-				labelFontSize: 14,
-				labelFontColor: "Black",
-				labelAngle: -45
-		},
+		legend:{
+			fontFamily: "Arial, Sans",
+			fontColor: "Black",
+			fontSize: 14,
+			itemWidth: 350,
+			fontWeight: "bold"
+		 },
 		data: [
 		{
-			type: "column",
+			indexLabelFontSize: 20,
+			indexLabelFontFamily: "Arial, Sans",
+			indexLabelFontColor: "Black",
+			indexLabelLineThickness: 3,    
+			type: "pie",
+			indexLabel: "{label}",
+			toolTipContent: "{y} [#percent %]",
+			legendText: "{label} - {y} [#percent %] ",
+			showInLegend: true,
 			dataPoints: [
-				{ label: "answers", y: result.answers },
-				{ label: "lectureQuestions", y: result.lectureQuestions },
-				{ label: "preparationQuestions", y: result.preparationQuestions },
-				{ label: "openSessions", y: result.openSessions },
-				{ label: "closedSessions", y: result.closedSessions },
-				{ label: "creators", y: result.creators },
-				{ label: "activeUsers", y: result.activeUsers },
-				{ label: "activeStudents", y: result.activeStudents },
-				{ label: "loggedinUsers", y: result.loggedinUsers },
-				{ label: "interposedQuestions", y: result.interposedQuestions },
-				{ label: "conceptQuestions", y: result.conceptQuestions },
-				{ label: "questions", y: result.questions },
-				{ label: "sessions", y: result.sessions }
+				{ y: result.answers, label: "answers" },
+				{ y: result.lectureQuestions, label: "lectureQuestions" },
+				{ y: result.preparationQuestions, label: "preparationQuestions" },
+				{ y: result.openSessions, label: "openSessions"},
+				{ y: result.closedSessions, label: "closedSessions" },
+				{ y: result.creators, label: "creators"},
+				{ y: result.activeUsers, label: "activeUsers"},
+				{ y: result.activeStudents, label: "activeStudents"},
+				{ y: result.loggedinUsers, label: "loggedinUsers"},
+				{ y: result.interposedQuestions, label: "interposedQuestions"},
+				{ y: result.conceptQuestions, label: "conceptQuestions"},
+				{ y: result.questions, label: "questions"},
+				{ y: result.sessions, label: "sessions"}
 			]
 		}
 		]
 	};
+
 	$("#chartContainer").CanvasJSChart(options);
+
 }
